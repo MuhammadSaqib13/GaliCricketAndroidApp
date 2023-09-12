@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "721421992408",
+    "project_id": "galicricket-a18dd",
+    "storage_bucket": "galicricket-a18dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721421992408:android:30cfa1f8c3c480a73572ad",
+        "android_client_info": {
+          "package_name": "com.example.galicricket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721421992408-tqdvtpvn5ahourijikbgmdbjvu30fltv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwzYj_2cGFHJMl_DfO7IDrbSl8L5evmbA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721421992408-tqdvtpvn5ahourijikbgmdbjvu30fltv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

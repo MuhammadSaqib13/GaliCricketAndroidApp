@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScheduleActivity">
+
+    <TextView
+        android:id="@+id/txt_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Match"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/teamA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apni Team"
+        android:textSize="16sp"
+        android:textColor="#2A7E2E"
+        android:textStyle="bold"
+        android:layout_below="@id/txt_create"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="45dp"
+        />
+
+    <TextView
+        android:id="@+id/vs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="vs"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_below="@id/txt_create"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        />
+
+    <TextView
+        android:id="@+id/teamB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Team"
+        android:textSize="16sp"
+        android:textColor="#D60000"
+        android:background="@drawable/underline_effect"
+        android:layout_below="@id/txt_create"
+        android:layout_toRightOf="@id/vs"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="20dp"
+        />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/datePickerCardView"
+        android:layout_below="@id/teamA"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="13dp">
+
+            <TextView
+                android:id="@+id/selectedDateTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Select Date"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_baseline_calendar_today_24"
+                android:contentDescription="Calendar Icon"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/timePickerCardView"
+        android:layout_below="@id/datePickerCardView"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="13dp">
+
+            <TextView
+                android:id="@+id/selectedTimeTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Select Time"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_baseline_timer_24"
+                android:contentDescription="Calendar Icon"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/overs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number Of Overs:    "
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:textStyle="normal"
+        android:layout_below="@id/timePickerCardView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="70dp"
+        />
+
+    <EditText
+        android:id="@+id/selectovers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timePickerCardView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/overs"
+        android:hint="2"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="20dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        app:startIconDrawable="@drawable/ic_baseline_sports_cricket_24"
+        android:id="@+id/groundList"
+        android:layout_below="@id/overs"
+        android:layout_width="match_parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:textColorHint="#2A7E2E"
+        app:hintTextColor="#2A7E2E"
+        app:boxStrokeColor="#2A7E2E"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:id="@+id/gorundlistautocomplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Ground"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ProgressBar
+        android:id="@+id/loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fb_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2A7E2E"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="25dp"
+        android:src="@drawable/ic_baseline_check_24"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        app:maxImageSize="30dp"
+        app:tint="#fff"
+        />
+
+</RelativeLayout>
