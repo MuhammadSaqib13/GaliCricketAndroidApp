@@ -1,6 +1,7 @@
 package com.example.galicricket.GroundDetails;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.galicricket.AddGroundActivity;
 import com.example.galicricket.GroundActivity;
 import com.example.galicricket.PlayersRecyclerView.PlayersAdapter;
 import com.example.galicricket.R;
@@ -82,7 +84,16 @@ public class GroundAdapter extends RecyclerView.Adapter<GroundAdapter.GroundView
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.showBottomDialog(ground);
+
+                Intent intent = new Intent(context, AddGroundActivity.class);
+                intent.putExtra("groundName",holder.ground_name.getText().toString());
+                intent.putExtra("location",holder.location.getText().toString());
+
+//                intent.putExtra("slots",model.getSlots().get(position).toString());
+                intent.putExtra("adapter","fromAdapter");
+                context.startActivity(intent);
+
+                //holder.showBottomDialog(ground);
             }
         });
 

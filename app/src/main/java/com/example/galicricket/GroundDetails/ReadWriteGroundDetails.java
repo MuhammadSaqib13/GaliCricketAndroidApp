@@ -2,28 +2,29 @@ package com.example.galicricket.GroundDetails;
 
 import com.example.galicricket.BookingDetails.Slot;
 
+import java.util.List;
 import java.util.Map;
 
 public class ReadWriteGroundDetails {
     private String Name;
-    private Map<String, Map<String, Slot>> slots;
+    private Map<String, Map<String, List<Slot>>> slots;
     private String Address;
 
     public ReadWriteGroundDetails(String name, String address) {
         Name = name;
         Address = address;
     }
-    public ReadWriteGroundDetails(String name, Map<String, Map<String, Slot>> slots, String address) {
+    public ReadWriteGroundDetails(String name, Map<String, Map<String, List<Slot>>> slots, String address) {
         Name = name;
         this.slots = slots;
         Address = address;
     }
 
-    public Map<String, Map<String, Slot>> getSlots() {
+    public Map<String, Map<String, List<Slot>>> getSlots() {
         return slots;
     }
 
-    public void setSlots(Map<String, Map<String, Slot>> slots) {
+    public void setSlots(Map<String, Map<String, List<Slot>>> slots) {
         this.slots = slots;
     }
 
